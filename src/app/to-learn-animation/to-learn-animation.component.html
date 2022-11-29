@@ -1,0 +1,496 @@
+<div id="DIV_1">
+  <div id="DIV_2">
+    <div id="DIV_3">
+      <a href="https://w3schools.com/" id="A_4"><span id="SPAN_5"></span></a>
+      <div id="DIV_6">
+        Go to w3schools.com
+      </div>
+    </div>
+    <div id="DIV_7">
+      <span id="SPAN_8"></span>
+      <div id="DIV_9">
+        Reset Score
+      </div>
+    </div>
+    <div id="DIV_10">
+      <span id="SPAN_11"></span>
+      <div id="DIV_12">
+        Close This Menu
+      </div>
+    </div>
+  </div>
+  <div id="DIV_13"></div>
+  <script id="SCRIPT_14">
+    function drawUserProgress() {
+      var x,
+        txt = "";
+      if (userLoggedOn) {
+        txt +=
+          '<div style="border-right:1px solid #ddd;background-color:#fff;height:70px;position:relative;">';
+        txt += "<div id='pluspointcontainer' style='display:none'>";
+        txt += "<span class='usergetspoint'>+1</span>";
+        txt += "<style>";
+        txt +=
+          "span.usergetspoint {left:90px;display:inline-block;line-height:normal;position:absolute;bottom:12px;font-size:12px;font-family:consolas,Menlo,monospace;background-color:transparent;color:#fff;border-radius:5px;padding:1px 3px} ";
+        txt +=
+          "span.usergetspoint {animation-name: example;animation-duration: 3s;animation-timing-function: linear;}";
+        txt += "@keyframes example {";
+        txt += "  0% {xtop:0px;background-color:transparent;}  ";
+        txt += "  1% {xtop:0px;background-color:rgba(153, 102, 255, 1);}  ";
+        txt += "  5%  {xtop:0px; font-size:16px;}";
+        txt += "  10%  {xtop:0px; font-size:12px;} ";
+        txt += "  12%  {xtop:0px; font-size:16px;}";
+        txt += "  14%  {xtop:0px; font-size:12px;}";
+        txt += "  16%  {xtop:0px; font-size:16px;}";
+        txt +=
+          "  18%  {xtop:0px; font-size:12px;background-color:rgba(153, 102, 255, 1);}  ";
+        txt += "  50% {background-color:transparent;}";
+        txt += "}";
+        txt += "</style>";
+        txt += "</div>";
+        txt +=
+          "<a href='https://profile.w3schools.com/log-in?redirect_url=https%3A%2F%2Fmy-learning.w3schools.com%2F'>";
+        //  txt += '  <a href="https://mypage.w3schools.com/mypage/default.php">';
+        txt +=
+          '    <img src="/images/mypagelogo32x32.png" alt="MYPAGE" style="position:absolute;top:19px;left:114px">';
+        txt +=
+          '    <svg style="position:absolute;top:0;left:104px;height:70px;width:70px">';
+        txt +=
+          '      <path id="mypage_circle1" fill="none" stroke="rgba(153, 102, 255, 0.1)" stroke-width="4"></path>';
+        txt +=
+          '      <path id="mypage_circle2" fill="none" stroke="rgba(153, 102, 255, 1)" stroke-width="4"></path>';
+        txt += "    </svg>";
+        txt += "  </a>";
+        txt += "  </div>";
+        document.getElementById("userprogress").innerHTML = txt;
+        x = Math.round((userscore / numberofexercises) * 100);
+        degrees = x * 3.6;
+        if (degrees > 359) degrees = 359;
+        document
+          .getElementById("mypage_circle1")
+          .setAttribute("d", describeArc(26, 35, 24, 0, 359));
+        document
+          .getElementById("mypage_circle2")
+          .setAttribute("d", describeArc(26, 35, 24, 0, degrees));
+        document.getElementsByClassName("exercisemenuinner")[0].style.top =
+          "169px";
+      }
+    }
+
+    function polarToCartesian(centerX, centerY, radius, angleInDegrees) {
+      var angleInRadians = ((angleInDegrees - 90) * Math.PI) / 180.0;
+      return {
+        x: centerX + radius * Math.cos(angleInRadians),
+        y: centerY + radius * Math.sin(angleInRadians)
+      };
+    }
+
+    function describeArc(x, y, radius, startAngle, endAngle) {
+      var start = polarToCartesian(x, y, radius, endAngle);
+      var end = polarToCartesian(x, y, radius, startAngle);
+      var largeArcFlag = endAngle - startAngle <= 180 ? "0" : "1";
+      var d = [
+        "M",
+        start.x,
+        start.y,
+        "A",
+        radius,
+        radius,
+        0,
+        largeArcFlag,
+        0,
+        end.x,
+        end.y
+      ].join(" ");
+      return d;
+    }
+  </script>
+  <div id="DIV_15">
+    <p id="P_16">
+      Completed 0 of 60 Exercises:
+    </p>
+  </div>
+  <div id="DIV_17">
+    <div id="DIV_18">
+      <div id="DIV_19"><i id="I_20"></i>jQuery Selectors</div>
+      <div id="DIV_21">
+        <a
+          href="https://www.w3schools.com/jquery/exercise_jq.asp?filename=exercise_jq_selectors1"
+          id="A_22"
+          ><i id="I_23"></i> Exercise 1</a
+        ><a
+          href="https://www.w3schools.com/jquery/exercise_jq.asp?filename=exercise_jq_selectors2"
+          id="A_24"
+          ><i id="I_25"></i> Exercise 2</a
+        ><a
+          href="https://www.w3schools.com/jquery/exercise_jq.asp?filename=exercise_jq_selectors3"
+          id="A_26"
+          ><i id="I_27"></i> Exercise 3</a
+        ><a
+          href="https://www.w3schools.com/jquery/exercise_jq.asp?filename=exercise_jq_selectors4"
+          id="A_28"
+          ><i id="I_29"></i> Exercise 4</a
+        ><a
+          href="https://www.w3schools.com/jquery/exercise_jq.asp?filename=exercise_jq_selectors5"
+          id="A_30"
+          ><i id="I_31"></i> Exercise 5</a
+        ><a
+          href="https://www.w3schools.com/jquery/exercise_jq.asp?filename=exercise_jq_selectors6"
+          id="A_32"
+          ><i id="I_33"></i> Exercise 6</a
+        ><a
+          href="https://www.w3schools.com/jquery/jquery_selectors.asp"
+          id="A_34"
+          >Go to jQuery Selectors Tutorial</a
+        >
+      </div>
+    </div>
+    <div id="DIV_35">
+      <div id="DIV_36"><i id="I_37"></i>jQuery Events</div>
+      <div id="DIV_38">
+        <a
+          href="https://www.w3schools.com/jquery/exercise_jq.asp?filename=exercise_jq_events1"
+          id="A_39"
+          ><i id="I_40"></i> Exercise 1</a
+        ><a
+          href="https://www.w3schools.com/jquery/exercise_jq.asp?filename=exercise_jq_events2"
+          id="A_41"
+          ><i id="I_42"></i> Exercise 2</a
+        ><a
+          href="https://www.w3schools.com/jquery/exercise_jq.asp?filename=exercise_jq_events3"
+          id="A_43"
+          ><i id="I_44"></i> Exercise 3</a
+        ><a
+          href="https://www.w3schools.com/jquery/exercise_jq.asp?filename=exercise_jq_events4"
+          id="A_45"
+          ><i id="I_46"></i> Exercise 4</a
+        ><a
+          href="https://www.w3schools.com/jquery/exercise_jq.asp?filename=exercise_jq_events5"
+          id="A_47"
+          ><i id="I_48"></i> Exercise 5</a
+        ><a href="https://www.w3schools.com/jquery/jquery_events.asp" id="A_49"
+          >Go to jQuery Events Tutorial</a
+        >
+      </div>
+    </div>
+    <div id="DIV_50">
+      <div id="DIV_51"><i id="I_52"></i>jQuery Hide and Show</div>
+      <div id="DIV_53">
+        <a
+          href="https://www.w3schools.com/jquery/exercise_jq.asp?filename=exercise_jq_hide_show1"
+          id="A_54"
+          ><i id="I_55"></i> Exercise 1</a
+        ><a
+          href="https://www.w3schools.com/jquery/exercise_jq.asp?filename=exercise_jq_hide_show2"
+          id="A_56"
+          ><i id="I_57"></i> Exercise 2</a
+        ><a
+          href="https://www.w3schools.com/jquery/exercise_jq.asp?filename=exercise_jq_hide_show3"
+          id="A_58"
+          ><i id="I_59"></i> Exercise 3</a
+        ><a
+          href="https://www.w3schools.com/jquery/exercise_jq.asp?filename=exercise_jq_hide_show4"
+          id="A_60"
+          ><i id="I_61"></i> Exercise 4</a
+        ><a
+          href="https://www.w3schools.com/jquery/jquery_hide_show.asp"
+          id="A_62"
+          >Go to jQuery Hide and Show Tutorial</a
+        >
+      </div>
+    </div>
+    <div id="DIV_63">
+      <div id="DIV_64"><i id="I_65"></i>jQuery Fade</div>
+      <div id="DIV_66">
+        <a
+          href="https://www.w3schools.com/jquery/exercise_jq.asp?filename=exercise_jq_fade1"
+          id="A_67"
+          ><i id="I_68"></i> Exercise 1</a
+        ><a
+          href="https://www.w3schools.com/jquery/exercise_jq.asp?filename=exercise_jq_fade2"
+          id="A_69"
+          ><i id="I_70"></i> Exercise 2</a
+        ><a
+          href="https://www.w3schools.com/jquery/exercise_jq.asp?filename=exercise_jq_fade3"
+          id="A_71"
+          ><i id="I_72"></i> Exercise 3</a
+        ><a
+          href="https://www.w3schools.com/jquery/exercise_jq.asp?filename=exercise_jq_fade4"
+          id="A_73"
+          ><i id="I_74"></i> Exercise 4</a
+        ><a href="https://www.w3schools.com/jquery/jquery_fade.asp" id="A_75"
+          >Go to jQuery Fade Tutorial</a
+        >
+      </div>
+    </div>
+    <div id="DIV_76">
+      <div id="DIV_77"><i id="I_78"></i>jQuery Slide</div>
+      <div id="DIV_79">
+        <a
+          href="https://www.w3schools.com/jquery/exercise_jq.asp?filename=exercise_jq_slide1"
+          id="A_80"
+          ><i id="I_81"></i> Exercise 1</a
+        ><a
+          href="https://www.w3schools.com/jquery/exercise_jq.asp?filename=exercise_jq_slide2"
+          id="A_82"
+          ><i id="I_83"></i> Exercise 2</a
+        ><a
+          href="https://www.w3schools.com/jquery/exercise_jq.asp?filename=exercise_jq_slide3"
+          id="A_84"
+          ><i id="I_85"></i> Exercise 3</a
+        ><a
+          href="https://www.w3schools.com/jquery/exercise_jq.asp?filename=exercise_jq_slide4"
+          id="A_86"
+          ><i id="I_87"></i> Exercise 4</a
+        ><a href="https://www.w3schools.com/jquery/jquery_slide.asp" id="A_88"
+          >Go to jQuery Slide Tutorial</a
+        >
+      </div>
+    </div>
+    <div id="DIV_89">
+      <div id="DIV_90"><i id="I_91"></i>jQuery Animate</div>
+      <div id="DIV_92">
+        <a
+          href="https://www.w3schools.com/jquery/exercise_jq.asp?filename=exercise_jq_animate1"
+          id="A_93"
+          ><i id="I_94"></i> Exercise 1</a
+        ><a
+          href="https://www.w3schools.com/jquery/exercise_jq.asp?filename=exercise_jq_animate2"
+          id="A_95"
+          ><i id="I_96"></i> Exercise 2</a
+        ><a
+          href="https://www.w3schools.com/jquery/exercise_jq.asp?filename=exercise_jq_animate3"
+          id="A_97"
+          ><i id="I_98"></i> Exercise 3</a
+        ><a
+          href="https://www.w3schools.com/jquery/exercise_jq.asp?filename=exercise_jq_animate4"
+          id="A_99"
+          ><i id="I_100"></i> Exercise 4</a
+        ><a
+          href="https://www.w3schools.com/jquery/jquery_animate.asp"
+          id="A_101"
+          >Go to jQuery Animate Tutorial</a
+        >
+      </div>
+    </div>
+    <div id="DIV_102">
+      <div id="DIV_103"><i id="I_104"></i>jQuery Stop</div>
+      <div id="DIV_105">
+        <a
+          href="https://www.w3schools.com/jquery/exercise_jq.asp?filename=exercise_jq_stop1"
+          id="A_106"
+          ><i id="I_107"></i> Exercise 1</a
+        ><a href="https://www.w3schools.com/jquery/jquery_stop.asp" id="A_108"
+          >Go to jQuery Stop Tutorial</a
+        >
+      </div>
+    </div>
+    <div id="DIV_109">
+      <div id="DIV_110"><i id="I_111"></i>jQuery Get</div>
+      <div id="DIV_112">
+        <a
+          href="https://www.w3schools.com/jquery/exercise_jq.asp?filename=exercise_jq_dom_get1"
+          id="A_113"
+          ><i id="I_114"></i> Exercise 1</a
+        ><a
+          href="https://www.w3schools.com/jquery/exercise_jq.asp?filename=exercise_jq_dom_get2"
+          id="A_115"
+          ><i id="I_116"></i> Exercise 2</a
+        ><a
+          href="https://www.w3schools.com/jquery/exercise_jq.asp?filename=exercise_jq_dom_get3"
+          id="A_117"
+          ><i id="I_118"></i> Exercise 3</a
+        ><a
+          href="https://www.w3schools.com/jquery/exercise_jq.asp?filename=exercise_jq_dom_get4"
+          id="A_119"
+          ><i id="I_120"></i> Exercise 4</a
+        ><a
+          href="https://www.w3schools.com/jquery/jquery_dom_get.asp"
+          id="A_121"
+          >Go to jQuery Get Tutorial</a
+        >
+      </div>
+    </div>
+    <div id="DIV_122">
+      <div id="DIV_123"><i id="I_124"></i>jQuery Set</div>
+      <div id="DIV_125">
+        <a
+          href="https://www.w3schools.com/jquery/exercise_jq.asp?filename=exercise_jq_dom_set1"
+          id="A_126"
+          ><i id="I_127"></i> Exercise 1</a
+        ><a
+          href="https://www.w3schools.com/jquery/exercise_jq.asp?filename=exercise_jq_dom_set2"
+          id="A_128"
+          ><i id="I_129"></i> Exercise 2</a
+        ><a
+          href="https://www.w3schools.com/jquery/exercise_jq.asp?filename=exercise_jq_dom_set3"
+          id="A_130"
+          ><i id="I_131"></i> Exercise 3</a
+        ><a
+          href="https://www.w3schools.com/jquery/exercise_jq.asp?filename=exercise_jq_dom_set4"
+          id="A_132"
+          ><i id="I_133"></i> Exercise 4</a
+        ><a
+          href="https://www.w3schools.com/jquery/jquery_dom_set.asp"
+          id="A_134"
+          >Go to jQuery Set Tutorial</a
+        >
+      </div>
+    </div>
+    <div id="DIV_135">
+      <div id="DIV_136"><i id="I_137"></i>jQuery Add</div>
+      <div id="DIV_138">
+        <a
+          href="https://www.w3schools.com/jquery/exercise_jq.asp?filename=exercise_jq_dom_add1"
+          id="A_139"
+          ><i id="I_140"></i> Exercise 1</a
+        ><a
+          href="https://www.w3schools.com/jquery/exercise_jq.asp?filename=exercise_jq_dom_add2"
+          id="A_141"
+          ><i id="I_142"></i> Exercise 2</a
+        ><a
+          href="https://www.w3schools.com/jquery/jquery_dom_add.asp"
+          id="A_143"
+          >Go to jQuery Add Tutorial</a
+        >
+      </div>
+    </div>
+    <div id="DIV_144">
+      <div id="DIV_145"><i id="I_146"></i>jQuery Remove</div>
+      <div id="DIV_147">
+        <a
+          href="https://www.w3schools.com/jquery/exercise_jq.asp?filename=exercise_jq_dom_remove1"
+          id="A_148"
+          ><i id="I_149"></i> Exercise 1</a
+        ><a
+          href="https://www.w3schools.com/jquery/exercise_jq.asp?filename=exercise_jq_dom_remove2"
+          id="A_150"
+          ><i id="I_151"></i> Exercise 2</a
+        ><a
+          href="https://www.w3schools.com/jquery/exercise_jq.asp?filename=exercise_jq_dom_remove3"
+          id="A_152"
+          ><i id="I_153"></i> Exercise 3</a
+        ><a
+          href="https://www.w3schools.com/jquery/jquery_dom_remove.asp"
+          id="A_154"
+          >Go to jQuery Remove Tutorial</a
+        >
+      </div>
+    </div>
+    <div id="DIV_155">
+      <div id="DIV_156"><i id="I_157"></i>jQuery CSS Classes</div>
+      <div id="DIV_158">
+        <a
+          href="https://www.w3schools.com/jquery/exercise_jq.asp?filename=exercise_jq_css_classes1"
+          id="A_159"
+          ><i id="I_160"></i> Exercise 1</a
+        ><a
+          href="https://www.w3schools.com/jquery/exercise_jq.asp?filename=exercise_jq_css_classes2"
+          id="A_161"
+          ><i id="I_162"></i> Exercise 2</a
+        ><a
+          href="https://www.w3schools.com/jquery/exercise_jq.asp?filename=exercise_jq_css_classes3"
+          id="A_163"
+          ><i id="I_164"></i> Exercise 3</a
+        ><a
+          href="https://www.w3schools.com/jquery/exercise_jq.asp?filename=exercise_jq_css_classes4"
+          id="A_165"
+          ><i id="I_166"></i> Exercise 4</a
+        ><a
+          href="https://www.w3schools.com/jquery/jquery_css_classes.asp"
+          id="A_167"
+          >Go to jQuery CSS Classes Tutorial</a
+        >
+      </div>
+    </div>
+    <div id="DIV_168">
+      <div id="DIV_169"><i id="I_170"></i>jQuery CSS</div>
+      <div id="DIV_171">
+        <a
+          href="https://www.w3schools.com/jquery/exercise_jq.asp?filename=exercise_jq_css1"
+          id="A_172"
+          ><i id="I_173"></i> Exercise 1</a
+        ><a
+          href="https://www.w3schools.com/jquery/exercise_jq.asp?filename=exercise_jq_css2"
+          id="A_174"
+          ><i id="I_175"></i> Exercise 2</a
+        ><a
+          href="https://www.w3schools.com/jquery/exercise_jq.asp?filename=exercise_jq_css3"
+          id="A_176"
+          ><i id="I_177"></i> Exercise 3</a
+        ><a
+          href="https://www.w3schools.com/jquery/exercise_jq.asp?filename=exercise_jq_css4"
+          id="A_178"
+          ><i id="I_179"></i> Exercise 4</a
+        ><a href="https://www.w3schools.com/jquery/jquery_css.asp" id="A_180"
+          >Go to jQuery CSS Tutorial</a
+        >
+      </div>
+    </div>
+    <div id="DIV_181">
+      <div id="DIV_182"><i id="I_183"></i>jQuery Dimensions</div>
+      <div id="DIV_184">
+        <a
+          href="https://www.w3schools.com/jquery/exercise_jq.asp?filename=exercise_jq_dimensions1"
+          id="A_185"
+          ><i id="I_186"></i> Exercise 1</a
+        ><a
+          href="https://www.w3schools.com/jquery/exercise_jq.asp?filename=exercise_jq_dimensions2"
+          id="A_187"
+          ><i id="I_188"></i> Exercise 2</a
+        ><a
+          href="https://www.w3schools.com/jquery/exercise_jq.asp?filename=exercise_jq_dimensions3"
+          id="A_189"
+          ><i id="I_190"></i> Exercise 3</a
+        ><a
+          href="https://www.w3schools.com/jquery/exercise_jq.asp?filename=exercise_jq_dimensions4"
+          id="A_191"
+          ><i id="I_192"></i> Exercise 4</a
+        ><a
+          href="https://www.w3schools.com/jquery/exercise_jq.asp?filename=exercise_jq_dimensions5"
+          id="A_193"
+          ><i id="I_194"></i> Exercise 5</a
+        ><a
+          href="https://www.w3schools.com/jquery/jquery_dimensions.asp"
+          id="A_195"
+          >Go to jQuery Dimensions Tutorial</a
+        >
+      </div>
+    </div>
+    <div id="DIV_196">
+      <div id="DIV_197"><i id="I_198"></i>jQuery Traversing</div>
+      <div id="DIV_199">
+        <a
+          href="https://www.w3schools.com/jquery/exercise_jq.asp?filename=exercise_jq_traversing1"
+          id="A_200"
+          ><i id="I_201"></i> Exercise 1</a
+        ><a
+          href="https://www.w3schools.com/jquery/exercise_jq.asp?filename=exercise_jq_traversing2"
+          id="A_202"
+          ><i id="I_203"></i> Exercise 2</a
+        ><a
+          href="https://www.w3schools.com/jquery/exercise_jq.asp?filename=exercise_jq_traversing3"
+          id="A_204"
+          ><i id="I_205"></i> Exercise 3</a
+        ><a
+          href="https://www.w3schools.com/jquery/exercise_jq.asp?filename=exercise_jq_traversing4"
+          id="A_206"
+          ><i id="I_207"></i> Exercise 4</a
+        ><a
+          href="https://www.w3schools.com/jquery/exercise_jq.asp?filename=exercise_jq_traversing5"
+          id="A_208"
+          ><i id="I_209"></i> Exercise 5</a
+        ><a
+          href="https://www.w3schools.com/jquery/exercise_jq.asp?filename=exercise_jq_traversing6"
+          id="A_210"
+          ><i id="I_211"></i> Exercise 6</a
+        ><a
+          href="https://www.w3schools.com/jquery/jquery_traversing.asp"
+          id="A_212"
+          >Go to jQuery Traversing Tutorial</a
+        >
+      </div>
+    </div>
+    <br id="BR_213" />
+  </div>
+</div>

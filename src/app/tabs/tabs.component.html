@@ -1,0 +1,10 @@
+<!-- <p>tabs works!</p> -->
+<ng-container *ngTemplateOutlet="contentTp"> </ng-container>
+<ng-template #contentTp>
+  <ng-container *ngFor="let x of xArray">
+    <ng-content></ng-content>
+  </ng-container>
+</ng-template>
+<ng-container *ngFor="let tab of tabs">
+  <ng-container *ngTemplateOutlet="tab.myTemplate"></ng-container>
+</ng-container>
